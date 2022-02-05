@@ -34,22 +34,23 @@ namespace Mk_Pdf {
 			"<</Kids [2 0 R] /Type /Pages /Count 1>>\n"
 			"endobj\n"
 			"2 0 obj\n"
-			"<</Resources 3 0 R /Contents [4 0 R] /Parent"
-				" 1 0 R /Type /Page /MediaBox [0 0 612 792]>>\n"
+			"<</Resources 3 0 R /Contents [4 0 R] /Parent 1 0 R"
+				" /Type /Page /MediaBox [0 0 612 792]>>\n"
 			"endobj\n"
 			"3 0 obj\n"
-			"<</Font <</F0 <</Subtype /Type1 /Type /Font"
-				" /BaseFont /Times-Roman>> >> >>\n"
+			"<</Font <</F0 <<"
+				"/Subtype /Type1 /Type /Font /BaseFont /Times-Roman"
+			">> >> >>\n"
 			"endobj\n"
 			"4 0 obj\n"
 			"<<\n"
-			"/Length 59\n"
+			"/Length 56\n"
 			">>\n"
 			"stream\n"
 			"BT\n"
-			"	/F0 12 Tf\n"
-			"	1 0 0 1 72 720 Tm\n"
-			"	[(Just some text.)] TJ\n"
+				"/F0 12 Tf\n"
+				"1 0 0 1 72 720 Tm\n"
+				"[(Just some text.)] TJ\n"
 			"ET\n"
 			"endstream\n"
 			"endobj\n"
@@ -65,13 +66,13 @@ namespace Mk_Pdf {
 			"0000000070 00000 n \n"
 			"0000000174 00000 n \n"
 			"0000000264 00000 n \n"
-			"0000000373 00000 n \n";
+			"0000000370 00000 n \n";
 
 		// trailer
 		out_ << "trailer\n"
 			"<</Root 5 0 R /Size 6>>\n"
 			"startxref\n"
-			"420\n"
+			"417\n"
 			"%%EOF\n";
 	}
 	// ...

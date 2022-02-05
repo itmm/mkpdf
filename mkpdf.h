@@ -13,11 +13,11 @@ namespace Mk_Pdf {
 			~Pdf();
 #line 49 "README.md"
 			Pdf(std::ostream &out): out_ { out } {
-#line 103 "./first_fake.md"
+#line 104 "./first_fake.md"
 				write_header();
 #line 50 "README.md"
 			}
-#line 105 "./first_fake.md"
+#line 106 "./first_fake.md"
 			void write_header() {
 				out_ << "%PDF-1.0\n"
 					"%\xe2\xe3\xcf\xd3\n";

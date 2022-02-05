@@ -11,13 +11,13 @@ endobj
 endobj
 4 0 obj
 <<
-/Length 59
+/Length 56
 >>
 stream
 BT
-	/F0 12 Tf
-	1 0 0 1 72 720 Tm
-	[(Just some text.)] TJ
+/F0 12 Tf
+1 0 0 1 72 720 Tm
+[(Just some text.)] TJ
 ET
 endstream
 endobj
@@ -31,9 +31,9 @@ xref
 0000000070 00000 n 
 0000000174 00000 n 
 0000000264 00000 n 
-0000000373 00000 n 
+0000000370 00000 n 
 trailer
 <</Root 5 0 R /Size 6>>
 startxref
-420
+417
 %%EOF
