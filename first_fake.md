@@ -1,8 +1,29 @@
-#line 64 "README.md"
-#include "mkpdf.h"
+# PDF-Ausgabe ermogeln
 
+Wir nehmen für den Anfang eine fertige PDF-Datei. Im Destruktor von `Pdf`
+geben wir diese aus. Damit haben wir eine gute Ausgangsbasis, um weitere
+Schritte in vivo zu implementieren.
+
+Zunächst muss in `mkpdf.h` der Destruktor der Klasse deklariert werden:
+
+```c++
+// ...
+	class Pdf {
+		// ...
+		public:
+			~Pdf();
+		// ...
+	};
+// ...
+```
+
+Und in diesem Destruktor geben wir in `mkpdf.cpp` das ganze Dokument aus.
+Mit Kommentaren werden aber schon die einzelnen Blöcke der Datei markiert,
+so dass sie später leicht ausgetauscht werden können:
+
+```c++
+// ...
 namespace Mk_Pdf {
-#line 27 "./first_fake.md"
 	Pdf::~Pdf() {
 		// header
 		out_ << "%PDF-1.0\n"
@@ -51,8 +72,6 @@ namespace Mk_Pdf {
 			"420\n"
 			"%%EOF\n";
 	}
-#line 67 "README.md"
-	Page Pdf::append_page() { return Page { }; }
-	void Page::move_to(int x, int y) { }
-	void Page::draw_string(const std::string &str) { }
+	// ...
 }
+```

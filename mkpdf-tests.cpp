@@ -9,7 +9,7 @@ int main() {
 		std::ofstream first { "first.pdf" };
 		Mk_Pdf::Pdf pdf { first };
 		auto page { pdf.append_page() };
-		auto frame { page.append_frame(page.bounds()) };
-		frame.append_paragraph("Just some text.");
+		page.move_to(240, 330);
+		page.draw_string("Just some text.");
 	}
 }

@@ -20,8 +20,8 @@ int main() {
 		std::ofstream first { "first.pdf" };
 		Mk_Pdf::Pdf pdf { first };
 		auto page { pdf.append_page() };
-		auto frame { page.append_frame(page.bounds()) };
-		frame.append_paragraph("Just some text.");
+		page.move_to(240, 330);
+		page.draw_string("Just some text.");
 	}
 }
 ```
@@ -30,10 +30,6 @@ Ein `Pdf` Dokument serialisiert sich direkt in einen `std::ostream`. Daher
 muss dieser gleich im Konstruktor mit angegeben werden. Weiterhin kann ein
 `Pdf` Dokument Seiten enthalten. Es gibt maximal eine aktuelle Seite, deren
 Inhalt gerade generiert wird.
-
-Auf den Seiten kann es Rahmen geben. Auf der aktuellen Seite gibt es
-maximal einen aktuellen Rahmen, in den Text und Bilder eingesetzt werden
-können.
 
 Damit das Beispiel übersetzt, muss es erst einmal eine Datei `mkpdf.h`
 geben. Diese muss zumindest die bisher verwendeten Klassen und Methoden
@@ -53,16 +49,10 @@ namespace Mk_Pdf {
 			Pdf(std::ostream &out): out_ { out } { }
 			Page append_page();
 	};
-	class Frame;
-	class Rect {};
 	class Page {
 		public:
-			Frame append_frame(const Rect &);
-			Rect bounds() const;
-	};
-	class Frame {
-		public:
-			void append_paragraph(const std::string &text);
+			void move_to(int x, int y);
+			void draw_string(const std::string &str);
 	};
 }
 ```
@@ -75,8 +65,19 @@ Und für die Methoden werden erst einmal leere Implementierungen in der Datei
 
 namespace Mk_Pdf {
 	Page Pdf::append_page() { return Page { }; }
-	Frame Page::append_frame(const Rect &rect) { return Frame { }; }
-	Rect Page::bounds() const { return Rect { }; }
-	void Frame::append_paragraph(const std::string &text) { }
+	void Page::move_to(int x, int y) { }
+	void Page::draw_string(const std::string &str) { }
 }
 ```
+
+Nun kann das Beispiel zwar übersetzt werden, aber es entsteht eine leere
+Datei. Dies ist keine legale Datei. Der nächste Schritt ist es nun, ein
+legales PDF-Dokument zu produzieren.
+
+Dazu ziehen wir das Pferd von hinten
+auf. Im Destruktor von `Pdf` erzeugen wir erst einmal ein statisches
+PDF-Dokument. Dieses schieben wir dann schrittweise in die einzelnen
+Methoden.
+
+Dieser Teil wird in [first_fake.md](./first_fake.md) beschrieben.
+

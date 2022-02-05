@@ -1,0 +1,39 @@
+%PDF-1.0
+%‚„œ”
+1 0 obj
+<</Kids [2 0 R] /Type /Pages /Count 1>>
+endobj
+2 0 obj
+<</Resources 3 0 R /Contents [4 0 R] /Parent 1 0 R /Type /Page /MediaBox [0 0 612 792]>>
+endobj
+3 0 obj
+<</Font <</F0 <</Subtype /Type1 /Type /Font /BaseFont /Times-Roman>> >> >>
+endobj
+4 0 obj
+<<
+/Length 59
+>>
+stream
+BT
+	/F0 12 Tf
+	1 0 0 1 72 720 Tm
+	[(Just some text.)] TJ
+ET
+endstream
+endobj
+5 0 obj
+<</Type /Catalog /Pages 1 0 R>>
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000015 00000 n 
+0000000070 00000 n 
+0000000174 00000 n 
+0000000264 00000 n 
+0000000373 00000 n 
+trailer
+<</Root 5 0 R /Size 6>>
+startxref
+420
+%%EOF
