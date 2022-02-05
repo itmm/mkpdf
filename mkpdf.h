@@ -12,7 +12,17 @@ namespace Mk_Pdf {
 #line 14 "./first_fake.md"
 			~Pdf();
 #line 49 "README.md"
-			Pdf(std::ostream &out): out_ { out } { }
+			Pdf(std::ostream &out): out_ { out } {
+#line 103 "./first_fake.md"
+				write_header();
+#line 50 "README.md"
+			}
+#line 105 "./first_fake.md"
+			void write_header() {
+				out_ << "%PDF-1.0\n"
+					"%\xe2\xe3\xcf\xd3\n";
+			}
+#line 51 "README.md"
 			Page append_page();
 	};
 	class Page {

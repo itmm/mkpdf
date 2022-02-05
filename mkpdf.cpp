@@ -1,22 +1,30 @@
-#line 64 "README.md"
+#line 65 "README.md"
 #include "mkpdf.h"
 
 namespace Mk_Pdf {
 #line 27 "./first_fake.md"
 	Pdf::~Pdf() {
 		// header
+#line 121
+		#if 0
+#line 29
 		out_ << "%PDF-1.0\n"
 			"%\xe2\xe3\xcf\xd3\n";
+#line 124
+		#endif
+#line 31
 
 		// objects
 		out_ << "1 0 obj\n"
 			"<</Kids [2 0 R] /Type /Pages /Count 1>>\n"
 			"endobj\n"
 			"2 0 obj\n"
-			"<</Resources 3 0 R /Contents [4 0 R] /Parent 1 0 R /Type /Page /MediaBox [0 0 612 792]>>\n"
+			"<</Resources 3 0 R /Contents [4 0 R] /Parent"
+				" 1 0 R /Type /Page /MediaBox [0 0 612 792]>>\n"
 			"endobj\n"
 			"3 0 obj\n"
-			"<</Font <</F0 <</Subtype /Type1 /Type /Font /BaseFont /Times-Roman>> >> >>\n"
+			"<</Font <</F0 <</Subtype /Type1 /Type /Font"
+				" /BaseFont /Times-Roman>> >> >>\n"
 			"endobj\n"
 			"4 0 obj\n"
 			"<<\n"
@@ -51,7 +59,7 @@ namespace Mk_Pdf {
 			"420\n"
 			"%%EOF\n";
 	}
-#line 67 "README.md"
+#line 68 "README.md"
 	Page Pdf::append_page() { return Page { }; }
 	void Page::move_to(int x, int y) { }
 	void Page::draw_string(const std::string &str) { }

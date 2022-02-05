@@ -46,7 +46,8 @@ namespace Mk_Pdf {
 	class Pdf {
 			std::ostream &out_;
 		public:
-			Pdf(std::ostream &out): out_ { out } { }
+			Pdf(std::ostream &out): out_ { out } {
+			}
 			Page append_page();
 	};
 	class Page {
