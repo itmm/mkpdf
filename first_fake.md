@@ -126,5 +126,9 @@ rausgenommen werden:
 // ...
 ```
 
-Die Präprozessor-Schritte sind notwendig, da man mit `md-patcher` keine
+Die Präprozessor-Schritte sind notwendig, da man mit `md-patcher` (noch) keine
 Zeilen im Source-Code löschen kann.
+
+Für die nächste Umstrukturierung betrachten wir erst einmal die Objekte in
+[objects.md](./objects.md).
+
