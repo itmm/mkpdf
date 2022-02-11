@@ -1,12 +1,12 @@
 #line 65 "README.md"
 #include "mkpdf.h"
-#line 105 "./objects.md"
+#line 105 "objects.md"
 #include <cassert>
 #include <iomanip>
 #line 66 "README.md"
 
 namespace Mk_Pdf {
-#line 27 "./first_fake.md"
+#line 27 "first_fake.md"
 	Pdf::~Pdf() {
 		// header
 #line 122
@@ -19,7 +19,7 @@ namespace Mk_Pdf {
 #line 31
 
 		// objects
-#line 51 "./objects.md"
+#line 51 "objects.md"
 		create_obj(1) << "<</Kids [2 0 R] /Type /Pages /Count 1>>\n";
 		create_obj(2) << "<</Resources 3 0 R /Contents [4 0 R] /Parent 1 0 R"
 			" /Type /Page /MediaBox [0 0 612 792]>>\n";
@@ -38,7 +38,7 @@ namespace Mk_Pdf {
 			"endstream\n";
 		create_obj(5) << "<</Type /Catalog /Pages 1 0 R>>\n";
 		#if 0
-#line 33 "./first_fake.md"
+#line 33 "first_fake.md"
 		out_ << "1 0 obj\n"
 			"<</Kids [2 0 R] /Type /Pages /Count 1>>\n"
 			"endobj\n"
@@ -66,12 +66,12 @@ namespace Mk_Pdf {
 			"5 0 obj\n"
 			"<</Type /Catalog /Pages 1 0 R>>\n"
 			"endobj\n";
-#line 71 "./objects.md"
+#line 71 "objects.md"
 		#endif
-#line 60 "./first_fake.md"
+#line 60 "first_fake.md"
 
 		// xref
-#line 137 "./objects.md"
+#line 137 "objects.md"
 		auto xref_pos { pos() };
 #line 110
 		assert(! objs_.empty());
@@ -87,7 +87,7 @@ namespace Mk_Pdf {
 			}
 		}
 		#if 0
-#line 62 "./first_fake.md"
+#line 62 "first_fake.md"
 		out_ << "xref\n"
 			"0 6\n"
 			"0000000000 65535 f \n"
@@ -96,26 +96,26 @@ namespace Mk_Pdf {
 			"0000000174 00000 n \n"
 			"0000000264 00000 n \n"
 			"0000000370 00000 n \n";
-#line 125 "./objects.md"
+#line 125 "objects.md"
 		#endif
-#line 70 "./first_fake.md"
+#line 70 "first_fake.md"
 
 		// trailer
 		out_ << "trailer\n"
-#line 142 "./objects.md"
+#line 142 "objects.md"
 			"<</Root 5 0 R /Size " << (max + 1) << ">>\n"
 			"startxref\n"
 			<< xref_pos << "\n"
 			"%%EOF\n";
 		#if 0
-#line 73 "./first_fake.md"
+#line 73 "first_fake.md"
 			"<</Root 5 0 R /Size 6>>\n"
 			"startxref\n"
 			"417\n"
 			"%%EOF\n";
-#line 148 "./objects.md"
+#line 148 "objects.md"
 		#endif
-#line 77 "./first_fake.md"
+#line 77 "first_fake.md"
 	}
 #line 68 "README.md"
 	Page Pdf::append_page() { return Page { }; }

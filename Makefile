@@ -3,7 +3,7 @@
 SOURCEs := $(wildcard *.md)
 
 md-run: $(SOURCEs)
-	md-patcher README.md
+	mdp README.md
 	date > md-run
 	$(MAKE) test
 

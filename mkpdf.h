@@ -3,13 +3,13 @@
 
 #include <ostream>
 #include <string>
-#line 82 "./objects.md"
+#line 82 "objects.md"
 #include <map>
 #line 43 "README.md"
 
 namespace Mk_Pdf {
 	class Page;
-#line 24 "./objects.md"
+#line 24 "objects.md"
 	class Close_Stream {
 			std::ostream &out_;
 		public:
@@ -23,12 +23,12 @@ namespace Mk_Pdf {
 	}
 #line 46 "README.md"
 	class Pdf {
-#line 85 "./objects.md"
+#line 85 "objects.md"
 			std::map<int, std::streampos> objs_;
 #line 47 "README.md"
 			std::ostream &out_;
 		public:
-#line 88 "./objects.md"
+#line 88 "objects.md"
 			std::streampos pos() { return out_.tellp(); }
 #line 38
 			Close_Stream create_obj(int id) {
@@ -37,15 +37,15 @@ namespace Mk_Pdf {
 #line 39
 				return Close_Stream { out_ << id << " 0 obj\n" };
 			}
-#line 14 "./first_fake.md"
+#line 14 "first_fake.md"
 			~Pdf();
 #line 49 "README.md"
 			Pdf(std::ostream &out): out_ { out } {
-#line 104 "./first_fake.md"
+#line 104 "first_fake.md"
 				write_header();
 #line 50 "README.md"
 			}
-#line 106 "./first_fake.md"
+#line 106 "first_fake.md"
 			void write_header() {
 				out_ << "%PDF-1.0\n"
 					"%\xe2\xe3\xcf\xd3\n";
